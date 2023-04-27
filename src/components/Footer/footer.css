@@ -1,0 +1,56 @@
+/* Footer Card */
+#footer_card{
+  background: #1c2237;
+  color: #fff;
+}
+/* Footer Logo and Title */
+.footer_logo_title{
+  font-size: 25px;
+}
+#footer_logo_title_container{
+  pointer-events: none;
+  color: #fff;
+}
+/* Footer App paragraph */
+#footer_app_description{
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+/* Footer Links */
+.footer_link_name, .footer_logo_title{
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer_link_name:hover{
+  color: #198754;
+  border-bottom: 1px solid #198754;
+}
+.footer_link_container{
+  margin-bottom: 25px;
+  text-align: center;
+}
+/* Copyright */
+#copyright, .footer_links{
+  text-align: center;
+  font-weight: bold;
+}
+/*To top button*/
+#back_to_top_cont{
+  text-align: right;
+  margin-right: 0;
+}
+.back_to_top{
+  font-size: 50px;
+  color: #ff4073;
+  transition: .5s;
+  border: solid #1c2237 1px;;
+  border-radius: 100%; 
+}
+.back_to_top:hover{
+  cursor: pointer ;
+  color: #8cf009;
+  border: solid #8cf009 5px;;
+  border-radius: 100%; 
+  transition: .5s;
+}

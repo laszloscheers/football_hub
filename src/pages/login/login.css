@@ -1,0 +1,100 @@
+/* Login Page Container */
+.signUpForm {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Login Page Wrapper */
+.loginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+
+/* Login Page Sections */
+.loginLeft,
+.loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Logo */
+.loginLogo {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1775ee;
+    margin-bottom: 10px;
+}
+
+/* Login Message */
+.loginDesc {
+    font-size: 24px;
+}
+
+/* Login Box */
+.loginBox {
+    height: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Email and Password Inputs */
+.loginInput {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* Hide the outline on the Inputs */
+.loginInput:focus {
+    outline: none;
+}
+
+/* Login Button */
+.loginButton {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #ff4073;;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Hide Outline on Login Button */
+.loginButton:focus {
+    outline: none;
+}
+
+/* Change cursor style when button disabled */
+.loginButton:disabled {
+    cursor: not-allowed;
+}
+
+
+/* Register Button */
+.loginRegisterButton {
+    width: 60%;
+    align-self: center;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #198754;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}

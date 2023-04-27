@@ -1,0 +1,39 @@
+/*Table*/
+#top_scorer_table{
+  margin-bottom: 0;
+  background-color: #fff;
+  text-align: center;
+}
+#top_scorer_table:hover{
+  margin-bottom: 0;
+  background-color: #f0f2f5;
+}
+.top_scorer_row{
+  width: 200px;
+}
+.top_scorer_data{
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+/*club crests*/
+.top_scorer_club_crest{
+  width: 48px;
+  height: 60px;
+}
+/*Links for top goal scorer*/
+#top_scorer_link{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  width: 100px;
+  transition: .5s;
+}
+#top_scorer_link:hover{
+  color: #ff4073;
+  transition: .5s;
+}

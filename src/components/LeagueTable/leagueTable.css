@@ -1,0 +1,44 @@
+/*League Table*/
+#league_table_container{
+    text-align: center;
+}
+.league_table_columns{
+    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+}
+#league_table_position{
+    width: 25px;
+    max-width: 25px;
+    text-align: left;
+}
+#league_table_club_name{
+    width: 80px;
+    max-width: 80px;
+    min-width: 80px;
+    text-align: left;
+}
+.league_table_data{
+    padding-top: 10px;
+}
+/*League Table crests*/
+.club_crests_table{
+    width: 45px;
+}
+/*Links*/
+#league_table_link{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  width: 100px;
+  transition: .5s;
+  max-width: 20px;
+}
+#league_table_link:hover{
+ color: #ff4073;
+ transition: .5s;
+}
+
+

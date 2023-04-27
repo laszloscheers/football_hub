@@ -1,0 +1,114 @@
+.matchDisplayed {
+    display: flex;
+    width: 100%;
+}
+.matchDisplayed a{
+    text-decoration: none;
+    color:black;
+}
+.matchDisplayedContent {
+    flex: 12;
+    display: grid;
+    justify-content: center;
+}
+.matchDisplayedHero{
+    width: 1300px;
+    height: 250px;
+    display: grid;
+    margin: 4% 0% 2.5% 0%;
+
+}
+.matchDisplayedHero > div{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    width: 850px;
+    height: 250px;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    transition: .75s;
+    justify-self: center;
+
+}
+.matchDisplayedHero div:hover{
+    text-decoration: none;
+    color: #fff;
+    transition: .75s;
+    background-color: #1c2237;
+}
+.matchDisplayedMatch{
+    margin: 5% 0% 5% 0%;
+    width: 1150px;
+    height: 250px;
+    justify-self: center;
+}
+
+
+.matchDisplayedHero div:nth-child(3){
+    align-self: flex-end !important;
+    margin: 0% 1% 1% 0%;
+}
+.matchDisplayedImg{
+    width: 320px;
+    height: 180px;
+}
+.matchDisplayedImg > *{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.matchLastGames{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0% 0% 5% 0%;
+}
+.matchLastGames > div{
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    padding: 2% 2% 2% 2%;
+}
+.matchLastGames div h3{
+    text-align: center;
+    margin-bottom: 5%;
+}
+.matchLastGames div a{
+    text-decoration: none;
+    color:black;
+}
+.matchLastGames div a div:hover{
+    text-decoration: none;
+    color: #fff;
+    transition: .75s;
+    background-color: #1c2237;
+}
+.matchLast5Matches{
+    text-align: center;
+    margin: 7% 0% 4% 0%;
+
+}
+.content{
+    padding: 1% 1% 1% 1%;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: 5px;
+    text-align: center;
+    min-width: 500px;
+    max-width: 500px;
+}
+/*club crests for last 5 matches*/
+.club_crests_last_5{
+width: 50px;
+height: 60px;
+}
+/*score text last 5*/
+.score_last_5{
+    padding-top: 20px;
+}
+.date_last_5{
+ font-size: 12px;
+}
+.matchDisplayed-loading{
+    min-width: 30vw;
+    min-height: 30vw;
+}

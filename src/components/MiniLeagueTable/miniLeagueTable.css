@@ -1,0 +1,18 @@
+.smallCrestContainer {
+    height: 45px;
+    width: 45px;
+}
+
+.smallCrest {
+    object-fit: contain;
+    height: 40px;
+    width: 40px;
+    padding-top: 3px;
+}
+
+
+.teamRow:hover {
+    background-color: lightGrey;
+    transform: scale(1.025);
+    transition: all 0.3s ease;
+}

@@ -1,0 +1,36 @@
+
+/*aligning headers and text in game week cards*/
+.match_headers div{
+    padding: 0% 3% 0% 3%;
+}
+.match_headers div:nth-child(1){
+    text-align: left;
+}
+.match_headers div:nth-child(2){
+    text-align: right;
+}
+.match_status{
+    justify-content:space-around;
+}
+.teams{
+text-align: center;
+}
+#score{
+    display: grid;
+}
+#match-time{
+align-self: center;
+
+}
+#match_matches_title{
+text-align: center;
+}
+#match_day_capitalise_card{
+ text-transform: capitalize;
+}
+/*Club Crests*/
+.match_crests{
+width: 110px;
+height: 150px;
+margin-bottom: 10px;
+}

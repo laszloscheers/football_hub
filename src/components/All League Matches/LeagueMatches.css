@@ -1,0 +1,53 @@
+#game_week_r_f, .game_date_r_f{
+  color: black;
+  transition: .75s;
+}
+#game_week_r_f:hover{
+  transition: .75s;
+  background-color: #1c2237;
+}
+/*aligning headers and text in game week cards*/
+#game_date_r_f{
+  text-align: right;
+}
+.r_f_data{
+  text-align: center;
+}
+#r_f_link{
+  text-decoration: none;
+  color: black;
+}
+/*Scroller Buttons for results and fixtures*/
+.r_f_icons{
+  font-size: 35px;
+  transition: .5s;
+  border: solid #fff 1px;;
+  border-radius: 100%; 
+}
+.r_f_icons:hover{
+  cursor: pointer ;
+  color: #ff4073;
+  border: solid #ff4073 5px;;
+  border-radius: 100%; 
+  transition: .5s;
+}
+#r_f_row{
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+.r_f_cols{
+  text-align: center;
+}
+.r_f_text{
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+#week_date_game{
+  text-align: left;
+}
+/*club crests*/
+.leage_matches_crests{
+  width: 75px;
+  height: 95px;
+}
