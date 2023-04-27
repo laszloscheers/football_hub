@@ -1,0 +1,25 @@
+/*taking link colour away*/
+.match_links{
+  text-decoration: none;
+}
+
+
+.gameWeekMatches {
+  display: flex;
+  width: 100%;
+}
+
+.gameWeekMatchesContent {
+  flex: 12;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gameWeek-loading{
+  min-width: 30vw;
+  min-height: 30vw;
+}
+

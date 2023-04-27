@@ -1,0 +1,21 @@
+.league-displayed {
+    display: flex;
+    width: 100%;
+}
+.league-container {
+    flex: 12;
+}
+
+.loadingContainer {
+    align-items: center;
+}
+
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.league-displayed-loading{
+    min-width: 30vw;
+    min-height: 30vw;
+}

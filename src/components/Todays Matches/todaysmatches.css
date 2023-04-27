@@ -1,0 +1,34 @@
+/*Position*/
+#match_container{
+  margin-top: 50px;
+}
+#today_match_body{
+  transition: .75s;
+}
+#today_match_body:hover{
+  transition: .75s;
+  background-color: #1c2237;
+  color: #fff;
+}
+/*Crests*/
+.club_crests_today_match{
+  width: 100px;
+  height: 120px;
+}
+/*Text*/
+.match_text{
+  margin-bottom: 0;
+}
+#match_time{
+  margin-top: 65px;
+}
+.match_team_names{
+  margin-top: 20px;
+}
+#match_day_capitalise{
+  text-transform: capitalize;
+}
+#today_match_link{
+  text-decoration: none;
+  color: black;
+}

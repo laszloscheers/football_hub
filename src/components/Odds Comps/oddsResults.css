@@ -1,0 +1,46 @@
+/* Date of Game*/
+.odds_card_game_date{
+  text-align: right;
+}
+/*Earnign Calculator*/
+#odds_card_col_2 {
+  padding-left: 10px;
+}
+#odds_card_col_10 {
+  padding-right: 0;
+}
+#odds_card_row{
+  margin-top: 20px;
+}
+
+/*Input*/
+#odds_card_input{
+ width: 163px;
+}
+/*Buttons and Prob*/
+.odds_card_result_nav{
+ text-align: center;
+}
+.odds_card_probability{
+  margin-top: 10px;
+}
+.odds_card_button{
+  width: 50px;
+  transition: .35s;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #1c2237;
+}
+.odds_card_button:active, .odds_card_button:focus, .odds_card_button:target{
+  background-color: #1c2237;
+  color: #fff;
+  transition: .35s;
+  width: 65px;
+  border-radius: 4px;
+}
+.odds_card_button:hover{
+  background-color: #1c2237;
+  color: #fff;
+  transition: .35s;
+}
+

@@ -1,0 +1,109 @@
+/* Register Page Container */
+.signUpForm {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f0f2f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Register Page Wrapper */
+.loginWrapper {
+    width: 70%;
+    height: 70%;
+    display: flex;
+}
+
+/* Register Page Sections */
+.loginLeft,
+.loginRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Logo */
+.loginLogo {
+    font-size: 50px;
+    font-weight: 800;
+    color: #1c2237;
+    margin-bottom: 10px;
+}
+
+/* Register Message */
+.loginDesc {
+    font-size: 24px;
+}
+
+/* Register Box */
+.loginBox {
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid #1c2237;
+}
+
+.loginButton:hover {
+    transform: scale(1.025);
+    transition: all 0.3s ease;
+}
+
+/* Username, Email and Password Inputs */
+.loginInput {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    font-size: 18px;
+    padding-left: 20px;
+}
+
+/* Hide the outline on the Inputs */
+.loginInput:focus {
+    outline: none;
+}
+
+
+/* Register Button */
+.loginButton {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #1c2237;
+    background-color: #198754;
+    color: #1c2237;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Log In Button */
+.loginRegisterButton {
+    width: 60%;
+    align-self: center;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #1c2237;
+    background-color: #ff4073;
+    color: #1c2237;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.loginRegisterButton:hover {
+    transform: scale(1.025);
+    transition: all 0.3s ease;
+}   
+
+
+@media screen and (max-width: 950px) {
+    .loginWrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+}

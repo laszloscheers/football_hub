@@ -1,0 +1,12 @@
+.oddsLeaguesDisplayed {
+    display: flex;
+    width: 100%;
+}
+
+.oddsLeaguesDisplayedContent {
+    flex: 12;
+}
+.oddsLeaguesDisplayedContent-loading{
+    min-width: 30vw;
+    min-height: 30vw;
+}

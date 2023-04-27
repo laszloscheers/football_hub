@@ -1,0 +1,83 @@
+#allMatches{
+  height: 650px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+/*top gs matches*/
+#top_gs_table{
+  margin-bottom: 2px;
+  background-color: #1c2237;
+  color: #fff;
+  text-align: center;
+}
+.top_gs_title{
+  width: 200px;
+}
+/*leaguew table matches*/
+#league_table_headers_pos{
+  width: 25px;
+  max-width: 25px;
+  text-align: left;
+}
+.league_table_headers_name{
+  width: 80px;
+  max-width: 80px;
+  min-width: 80px;
+  text-align: left;
+}
+.league_table_headers{
+  width: 50px;
+    min-width: 50px;
+    max-width: 50px;
+}
+
+#league_table_header_cont{
+  margin-bottom: 2px;
+  background-color: #1c2237;
+  color: #fff;
+  text-align: center;
+}
+/*headers for each section in leagues*/
+.league_table_titles{
+  text-align: center;
+  margin-top: 20px;
+}
+.container ul{
+  justify-content: center;
+}
+.leagueDisplayeHero div:hover{
+  color: black !important;
+  transition: none !important;
+  background-color: white !important;
+}
+.leagueDisplayedHeroContainer{
+  margin: 0% 0% 4% 0%;
+}
+.leagueDisplayeHero{
+  width: 1300px !important;
+  height: 150px !important;
+  margin: 3% 0% 0% 0% !important;
+
+}
+.leagueDisplayeHero > div{
+  width: 700px !important;
+  height: 150px !important;
+
+}
+
+.leagueDisplayedImg{
+  width: 200px!important;
+  height: 120px!important;
+}
+.tab-content{
+  margin-bottom: 5%;
+}
+#uncontrolled-tab-example-tab-leagueTable{
+  font-weight: bold;
+}
+#uncontrolled-tab-example-tab-topScorers{
+  font-weight: bold;
+}
+#uncontrolled-tab-example-tab-resultsAndFixures{
+  font-weight: bold;
+}

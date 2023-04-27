@@ -1,0 +1,70 @@
+.leagues {
+    display: flex;
+    width: 100%;
+}
+
+.leaguesContainer {
+    flex: 12;
+    display: grid;
+
+}
+
+.content{
+    display: grid;
+    margin: 2% 10% 2% 10%;
+    justify-self: center;
+}
+
+.leagues-title{
+    margin: 1%;
+    padding: 1rem 1rem;
+    width: 40%;
+    justify-self: center;
+    text-align: center;
+}
+.leagues-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0% 5% 5% 5%;
+    justify-content: center;
+}
+.link{
+    text-decoration: none;
+    color: black
+}
+.card-style{
+    margin: 2% 5% 7% 0%;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 1rem 1rem;
+}
+.card-body-style{
+    display: flex;
+}
+.card-body-style div{
+    width: 200px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+}
+
+.card-body-style div:nth-child(2){
+    padding: 0% 3% 0% 7%;
+}
+
+.card-child{
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color: #000;
+    transition: .35s;
+}
+.card-style:hover{
+    text-decoration: none;
+    color: #fff;
+    transition: .75s;
+    background-color: #1c2237;
+}
+
+.card-body-style div:hover{
+    color: #fff;
+}

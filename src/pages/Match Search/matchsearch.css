@@ -1,0 +1,31 @@
+.matchSearch {
+    display: flex;
+    width: 100%;
+}
+
+.matchSearchContent {
+    flex: 12;
+    margin: 5%;
+}
+
+.matchSearchLeagueName{
+
+    margin-bottom: 2%;
+}
+.matchSearchMessage{
+    text-align: center;
+    margin-bottom: 2%;
+}
+.matchSearchContent div div a {
+    text-decoration: none;
+}
+.matchSearchContent div div a div:hover{
+    transition: .75s;
+    background-color: #1c2237;
+    color:white;
+}
+.matchSearch-loading{
+    min-width: 30vw;
+    min-height: 30vw;
+
+}

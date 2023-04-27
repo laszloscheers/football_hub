@@ -1,0 +1,35 @@
+#game_week_container, .game_week_headers{
+  text-decoration: none;
+  color: black;
+  transition: .75s;
+}
+#game_week_container:hover{
+  text-decoration: none;
+  color: #fff;
+  transition: .75s;
+  background-color: #1c2237;
+}
+/*aligning headers and text in game week cards*/
+#game_date_header{
+  text-align: right;
+}
+.teams{
+  text-align: center;
+}
+#game_week_time{
+  padding-top: 50px;
+}
+#game_week_matches_title{
+  text-align: center;
+}
+/*Club Crests*/
+.game_week_crests{
+  width: 75px;
+  height: 95px;
+  margin-bottom: 10px;
+}
+#curren_game_week_score{
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+}
