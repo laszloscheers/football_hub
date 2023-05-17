@@ -19,24 +19,24 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
 
 
     // Method to find next match
-    const findNextMatch = () => {
+    const findNextMatch = useCallback(() => {
         const fixtures = favouriteFixtures?.filter(match => match.status !== "FINISHED");
         setNextMatch(fixtures[0]);
-    };
+    },[favouriteFixtures]);
 
 
     // Method to find last 5 matches
-    const findLast5Matches = () => {
+    const findLast5Matches = useCallback(() => {
         const results = favouriteFixtures?.filter(match => match.status === "FINISHED");
         const last5 = results.slice(-5).reverse();
         setLast5Matches(last5);
-    };
+    },[favouriteFixtures]);
 
 
     // Method to filter down the league to 7 positions
     const filterLeague = useCallback((league) => {
         // Find League Position
-        league.map((place) => {
+        league.forEach((place) => {
             if (place.team.id === favouriteTeam.id) {
                 setLeaguePosition(place.position);
             }
@@ -55,7 +55,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
             const filteredArray = league.slice(leaguePosition - 4, leaguePosition + 3);
             setFilteredLeague(filteredArray);
         }
-    });
+    },[favouriteLeague.length, favouriteTeam.id, leaguePosition]);
 
     // Sets next match and results when rendered or fixtures changes
     useEffect(() => {

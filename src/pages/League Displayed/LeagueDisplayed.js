@@ -88,7 +88,7 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
             i++;
             //Runs three times because that's the number of keys that we have
         } while(apiCall && i<apiLength);
-    });
+    },[apiLength]);
 
     //Renders the API call
     useEffect(() => {

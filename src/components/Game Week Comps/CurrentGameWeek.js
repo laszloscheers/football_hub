@@ -35,7 +35,7 @@ const CurrentGameWeek = (props) => {
     else if (leagueName === 380){
      setLeagueTitle(mapOddsLeagues[4].name)
     }
-    });
+    },[leagueName]);
 
     useEffect(() => {
       settingLeagueTitle();
