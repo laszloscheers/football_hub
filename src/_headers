@@ -1,2 +1,2 @@
 /*
-  Access-Control-Allow-Origin: https://football-hub-v2.netlify.app/
+  Access-Control-Allow-Origin: *
