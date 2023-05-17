@@ -94,10 +94,10 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
             do{
                 try{
                     // Fetch Team 1 Fixtures
-                    const data1 = await axios.get(mapAPIs[i].link + "teams/" + query.state.homeTeam.id + "/matches/",
+                    const data1 = await axios.get(mapAPIs[i].link + "teams/" + query.state.homeTeam.id + "matches/",
                     { headers: { "X-Auth-Token": mapAPIs[i].token } });
                     // Fetch Team Fixtures
-                    const data2 = await axios.get(mapAPIs[i].link + "teams/" + query.state.awayTeam.id + "/matches/",
+                    const data2 = await axios.get(mapAPIs[i].link + "teams/" + query.state.awayTeam.id + "matches/",
                     { headers: { "X-Auth-Token": mapAPIs[i].token } });
 
                     //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage

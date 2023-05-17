@@ -47,7 +47,7 @@ function App() {
         setFavouriteTeam(data.data);
 
         // Fetch Team Fixtures
-        const data2 = await axios.get(sideBarApi.link + "teams/" + clubId + "/matches/",
+        const data2 = await axios.get(sideBarApi.link + "teams/" + clubId + "matches/",
             { headers: { "X-Auth-Token": sideBarApi.token } });
         setFavouriteFixtures(data2.data.matches);
     };
@@ -64,7 +64,7 @@ function App() {
         }
         console.log(favouriteLeagueId);
         // Fetch Standings
-        const data = await axios.get(sideBarApi.link + "competitions/" + favouriteLeagueId + "/standings",
+        const data = await axios.get(sideBarApi.link + "competitions/" + favouriteLeagueId + "standings",
             { headers: { "X-Auth-Token": sideBarApi.token } });
         setFavouriteLeague(data.data.standings[0].table);
     };
