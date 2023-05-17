@@ -99,7 +99,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         do{
                             try{
                                 //Fetching the leagues that that the team is involved via API
-                                const getMatches = await axios.get(mapAPIs[l].link + "competitions/" + leagues[k] + "/matches",
+                                const getMatches = await axios.get(mapAPIs[l].link + "competitions/" + leagues[k] + "matches",
                                 { headers: { "X-Auth-Token": mapAPIs[l].token }, params:{status: status[m]} });
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
