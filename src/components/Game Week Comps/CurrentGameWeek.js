@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useState } from "react";
 
 import { format } from 'date-fns'
@@ -40,7 +40,7 @@ const CurrentGameWeek = (props) => {
     useEffect(() => {
       settingLeagueTitle();
     }, [settingLeagueTitle])
-    
+
   return(
     <Container >
       <Card >
