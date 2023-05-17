@@ -8,7 +8,6 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import { mapCompetitions } from '../../helperFunctions';
 import { mapAPIs } from '../../apiKeys';
 import League from '../../components/League/League';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) => {
 
@@ -101,7 +100,7 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
             //Sets the error to be no matches for that league
             setError("There were no matches for that league name")
         }
-    },[query.state,competitionCode]);
+    },[query.state, competitionCode, fetchLeagueData]);
 
     //If an error exists redirects to home page and sends the error to be displayed display
     if (error) {

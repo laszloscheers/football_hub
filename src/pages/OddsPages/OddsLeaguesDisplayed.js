@@ -26,7 +26,7 @@ function OddsLeaguesDisplayed({ username, favouriteTeam, favouriteLeague, favour
   }
   useEffect(() => {
     fetchOddsData();
-  }, [oddsCode])
+  }, [oddsCode,fetchOddsData])
   if(loading){
     return (
       <>

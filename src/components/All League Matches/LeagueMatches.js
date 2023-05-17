@@ -24,7 +24,7 @@ const gameTime = format(new Date(`${leagueMatch.utcDate}`), 'k.mm');
               <Card.Body id="game_week_container">
                 <Row>
                   <Col sm={5} className='r_f_data'>
-                    <img className='leage_matches_crests' src={clubCrests.link1 + leagueMatch.homeTeam.id + clubCrests.link2}></img>
+                    <img className='leage_matches_crests' src={clubCrests.link1 + leagueMatch.homeTeam.id + clubCrests.link2} alt={"Image of " + leagueMatch.homeTeam.name}></img>
                     <h5>{leagueMatch.homeTeam.name}</h5>
                   </Col>
                   <Col sm={2} className='r_f_data'>
@@ -33,7 +33,7 @@ const gameTime = format(new Date(`${leagueMatch.utcDate}`), 'k.mm');
                     <Card.Text className='match_text'> {gameTime} (GMT+1) </Card.Text>
                   </Col>
                   <Col sm={5} className='r_f_data'>
-                  <img className='leage_matches_crests' src={clubCrests.link1 + leagueMatch.awayTeam.id + clubCrests.link2}></img>
+                  <img className='leage_matches_crests' src={clubCrests.link1 + leagueMatch.awayTeam.id + clubCrests.link2} alt={"Image of " + leagueMatch.homeTeam.name}></img>
                     <h5>{leagueMatch.awayTeam.name}</h5>
                   </Col>
                 </Row>

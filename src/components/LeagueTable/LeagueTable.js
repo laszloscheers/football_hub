@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { Container, Table, Row, Col } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import './leagueTable.css';
 
 const LeagueTable = ({ standings }) => {
@@ -11,7 +11,7 @@ const LeagueTable = ({ standings }) => {
             <tbody>
              <tr>
                 <th id='league_table_position' scope="row"><div className='league_table_data'>{team.position}</div></th>
-                <td className='league_table_columns'><img className='club_crests_table' src={team.team.crestUrl}></img></td>
+                <td className='league_table_columns'><img className='club_crests_table' src={team.team.crestUrl} alt={"Image of " + team.team.name}></img></td>
                 <th id='league_table_club_name'><Link id='league_table_link' to={'/club/' + team.team.name} state={team.team.name.toLowerCase()}><div className='league_table_data'>{team.team.name}</div></Link></th>
                 <th className='league_table_columns'scope="row"><div className='league_table_data'>{team.playedGames}</div></th>
                 <td className='league_table_columns'><div className='league_table_data'>{team.won}</div></td>
