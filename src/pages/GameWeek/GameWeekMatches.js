@@ -61,7 +61,7 @@ const GameWeekMatches = ({ username, favouriteTeam, favouriteLeague, favouriteFi
      setMatchDayCounterChampionship(counterELC)
       })
     );
-  }); 
+  },[matchDayCounter, matchDayCounterChampionship, matchDayCounterGermany]); 
  // Function is ran again once the matchday counter is updated to retrieve data for current game week 
   useEffect(() => {
     fetchCurrentGameWeek();

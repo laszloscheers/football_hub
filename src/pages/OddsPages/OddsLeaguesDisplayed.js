@@ -23,7 +23,7 @@ function OddsLeaguesDisplayed({ username, favouriteTeam, favouriteLeague, favour
     setOdds(results);
     console.log(results)
     setLoading(false);
-  });
+  },[oddsCode]);
 
   useEffect(() => {
     fetchOddsData();
