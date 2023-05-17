@@ -201,7 +201,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                         <Link to={'/match/'} state={match}>
                                             <Row className='content'>
                                                 <Col>
-                                                    <img className='club_crests_last_5' src={clubCrests.link1 +match.homeTeam.id+ clubCrests.link2}></img>
+                                                    <img className='club_crests_last_5' src={clubCrests.link1 +match.homeTeam.id+ clubCrests.link2} alt={"Image of " + match.homeTeam.name}></img>
                                                     <br></br>
                                                     <span className='date_last_5'>{match.homeTeam.name}</span>
                                                 </Col>
@@ -213,7 +213,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                                  </Container>
                                                 </Col>
                                                 <Col>
-                                                  <img className='club_crests_last_5' src={clubCrests.link1 +match.awayTeam.id+ clubCrests.link2}></img>
+                                                  <img className='club_crests_last_5' src={clubCrests.link1 +match.awayTeam.id+ clubCrests.link2} alt={"Image of " + match.awayTeam.name}></img>
                                                   <br></br>
                                                   <span className='date_last_5'>{match.awayTeam.name}</span>
                                                 </Col>
@@ -227,7 +227,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                     <Link to={'/match/'} state={match} >
                                         <Row className='content'>
                                                 <Col>
-                                                    <img className='club_crests_last_5' src={clubCrests.link1 +match.homeTeam.id+ clubCrests.link2}></img>
+                                                    <img className='club_crests_last_5' src={clubCrests.link1 +match.homeTeam.id+ clubCrests.link2} alt={"Image of " + match.homeTeam.name}></img>
                                                     <br></br>
                                                     <span className='date_last_5'>{match.homeTeam.name}</span>
                                                 </Col>
@@ -239,7 +239,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                                  </Container>
                                                 </Col>
                                                 <Col>
-                                                  <img className='club_crests_last_5' src={clubCrests.link1 +match.awayTeam.id+ clubCrests.link2}></img>
+                                                  <img className='club_crests_last_5' src={clubCrests.link1 +match.awayTeam.id+ clubCrests.link2} alt={"Image of " + match.awayTeam.name}></img>
                                                   <br></br>
                                                   <span className='date_last_5'>{match.awayTeam.name}</span>
                                                 </Col>

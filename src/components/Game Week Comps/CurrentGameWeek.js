@@ -38,7 +38,7 @@ const CurrentGameWeek = (props) => {
   }
     useEffect(() => {
       settingLeagueTitle();
-    }, [])
+    }, [settingLeagueTitle])
   return(
     <Container >
       <Card >
@@ -51,7 +51,7 @@ const CurrentGameWeek = (props) => {
         <Card.Body id="game_week_container">
           <Row>
             <Col sm={5} className='teams'>
-              <img className='game_week_crests' src={clubCrests.link1 + crestHome + clubCrests.link2}></img>
+              <img className='game_week_crests' src={clubCrests.link1 + crestHome + clubCrests.link2} alt={"Image of " + home} ></img>
               <h5>{home}</h5>
             </Col>
             <Col sm={2} className='teams'>
@@ -60,7 +60,7 @@ const CurrentGameWeek = (props) => {
              <Card.Text className='match_text'> {gameTime} (GMT+1) </Card.Text>
             </Col>
             <Col sm={5} className='teams'>
-              <img className='game_week_crests' src={clubCrests.link1 + crestAway + clubCrests.link2}></img>
+              <img className='game_week_crests' src={clubCrests.link1 + crestAway + clubCrests.link2}alt={"Image of " + away}></img>
               <h5>{away}</h5>
             </Col>
           </Row>

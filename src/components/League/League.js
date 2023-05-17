@@ -3,7 +3,6 @@ import { Container, Table,Tab,Tabs } from 'react-bootstrap';
 import LeagueMatches from '../All League Matches/LeagueMatches';
 import Scroller from '../All League Matches/Scroll';
 import LeagueTable from '../LeagueTable/LeagueTable';
-import Team from '../Team/Team';
 import TopGoalScorer from '../Top Goal Scorers/TopGoalScorers';
 import { mapLeagues} from '../../helperFunctions';
 

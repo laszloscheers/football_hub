@@ -26,7 +26,7 @@ const TodaysMatches = ({ match}) => {
               <Card.Body id='today_match_body'>
               <Row>
                   <Col sm={5} className='teams'>
-                  <img className='club_crests_today_match' src={clubCrests.link1 + match.homeTeam.id + clubCrests.link2}></img>
+                  <img className='club_crests_today_match' src={clubCrests.link1 + match.homeTeam.id + clubCrests.link2} alt={"Image of " + match.homeTeam.name}></img>
                   <h5 className='match_team_names'>{match.homeTeam.name}</h5>
                   </Col>
                   <Col sm={2} className='teams'>
@@ -35,7 +35,7 @@ const TodaysMatches = ({ match}) => {
                     <Card.Text className='match_text'> {gameTime} (GMT+1) </Card.Text>
                   </Col>
                   <Col sm={5} className='teams'>
-                  <img className='club_crests_today_match' src={clubCrests.link1 + match.awayTeam.id + clubCrests.link2}></img>
+                  <img className='club_crests_today_match' src={clubCrests.link1 + match.awayTeam.id + clubCrests.link2} alt={"Image of " + match.awayTeam.name}></img>
                   <h5 className='match_team_names'>{match.awayTeam.name}</h5>
                   </Col>
               </Row>

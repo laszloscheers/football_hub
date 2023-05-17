@@ -65,7 +65,7 @@ const GameWeekMatches = ({ username, favouriteTeam, favouriteLeague, favouriteFi
  // Function is ran again once the matchday counter is updated to retrieve data for current game week 
   useEffect(() => {
     fetchCurrentGameWeek();
-  }, [matchDayCounter])
+  }, [matchDayCounter, fetchCurrentGameWeek])
 
   //Array for each league
   const AllLeagues = [ plMatches, saMatches, fl1Matches, bl1Matches, elcMatches, pdMatches ] 
@@ -85,7 +85,7 @@ const GameWeekMatches = ({ username, favouriteTeam, favouriteLeague, favouriteFi
               return (
                 <Container key={index}>
                   <br />
-                  <Container ><h2 id='game_week_matches_title'></h2></Container>
+                  <Container ><div id='game_week_matches_title'></div></Container>
                   {everyLeague.map((currentGW) =>
                     <Link to={'/match/'} state={currentGW} key={currentGW.id} className='match_links'>
                       <CurrentGameWeek key={currentGW.id}

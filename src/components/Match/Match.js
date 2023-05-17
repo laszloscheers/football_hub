@@ -23,7 +23,7 @@ const Match = ({ match, index }) => {
             <Card.Body id="match_container">
              <Row>
               <Col sm={5} className='teams'>
-               <img className='match_crests' src={clubCrests.link1 + match.homeTeam.id + clubCrests.link2}></img>
+               <img className='match_crests' src={clubCrests.link1 + match.homeTeam.id + clubCrests.link2}alt={"Image of " + match.homeTeam.name}></img>
                <h5>{match.homeTeam.name}</h5>
               </Col>
               <Col sm={2} className='teams' id='score'>
@@ -32,7 +32,7 @@ const Match = ({ match, index }) => {
                <Card.Text className='match_text'> {gameTime} (GMT+1) </Card.Text>
               </Col>
               <Col sm={5} className='teams'>
-               <img className='match_crests' src={clubCrests.link1 + match.awayTeam.id + clubCrests.link2}></img>
+               <img className='match_crests' src={clubCrests.link1 + match.awayTeam.id + clubCrests.link2}alt={"Image of " + match.awayTeam.name}></img>
                <h5>{match.awayTeam.name}</h5>
               </Col>
              </Row>

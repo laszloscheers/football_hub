@@ -36,7 +36,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
     // Method to filter down the league to 7 positions
     const filterLeague = (league) => {
         // Find League Position
-        league.map(place => {
+        league.map((place) => {
             if (place.team.id === favouriteTeam.id) {
                 setLeaguePosition(place.position);
             }
@@ -64,7 +64,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
             findNextMatch();
             findLast5Matches();
         }
-    }, [favouriteFixtures]);
+    }, [favouriteFixtures, findLast5Matches, findLast5Matches]);
 
 
     // Sets filtered league table when rendered or league changes
@@ -72,7 +72,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
         if (favouriteLeague?.length) {
             filterLeague(favouriteLeague);
         }
-    }, [favouriteLeague, nextMatch]);
+    }, [favouriteLeague, nextMatch, filterLeague]);
 
 
     
