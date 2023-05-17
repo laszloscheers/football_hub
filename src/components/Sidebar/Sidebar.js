@@ -34,7 +34,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
 
 
     // Method to filter down the league to 7 positions
-    const filterLeague = (league) => {
+    const filterLeague = useCallback((league) => {
         // Find League Position
         league.map((place) => {
             if (place.team.id === favouriteTeam.id) {
@@ -55,8 +55,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
             const filteredArray = league.slice(leaguePosition - 4, leaguePosition + 3);
             setFilteredLeague(filteredArray);
         }
-    }
-
+    });
 
     // Sets next match and results when rendered or fixtures changes
     useEffect(() => {
@@ -64,7 +63,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
             findNextMatch();
             findLast5Matches();
         }
-    }, [favouriteFixtures, findLast5Matches, findLast5Matches]);
+    }, [favouriteFixtures, findLast5Matches, findNextMatch]);
 
 
     // Sets filtered league table when rendered or league changes
