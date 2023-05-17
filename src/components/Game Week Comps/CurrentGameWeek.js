@@ -16,7 +16,7 @@ const CurrentGameWeek = (props) => {
   const gameTime = format(new Date(`${time}`), 'k.mm');
 
   //League Titles
-  const settingLeagueTitle = () => {
+  const settingLeagueTitle = useCallback(() => {
     if (leagueName === 733) {
       setLeagueTitle(mapOddsLeagues[0].name)
     }
@@ -35,10 +35,12 @@ const CurrentGameWeek = (props) => {
     else if (leagueName === 380){
      setLeagueTitle(mapOddsLeagues[4].name)
     }
-  }
+    });
+
     useEffect(() => {
       settingLeagueTitle();
     }, [settingLeagueTitle])
+    
   return(
     <Container >
       <Card >

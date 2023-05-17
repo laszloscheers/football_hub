@@ -38,7 +38,7 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
     const apiLength = Object.keys(mapAPIs).length
 
     // Combined Method - All Relevant League Data
-    const fetchLeagueData = async (leagueId) => {
+    const fetchLeagueData = useCallback(async (leagueId) => {
         //Makes API calls to different token keys untill one is successful
         var apiCall = false;
         var i = 0;
@@ -88,7 +88,7 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
             i++;
             //Runs three times because that's the number of keys that we have
         } while(apiCall && i<apiLength);
-    };
+    });
 
     //Renders the API call
     useEffect(() => {
