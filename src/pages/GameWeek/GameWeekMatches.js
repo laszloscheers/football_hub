@@ -95,8 +95,8 @@ const GameWeekMatches = ({ username, favouriteTeam, favouriteLeague, favouriteFi
                         time={currentGW.utcDate}
                         crestHome={currentGW.homeTeam.id}
                         crestAway={currentGW.awayTeam.id}
-                        scoreAway={currentGW.score.fullTime.awayTeam}
-                        scoreHome={currentGW.score.fullTime.homeTeam} />
+                        scoreAway={currentGW.score.fullTime.away}
+                        scoreHome={currentGW.score.fullTime.home} />
                     </Link>)}
                 </Container>
               )

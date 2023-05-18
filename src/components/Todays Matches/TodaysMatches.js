@@ -30,7 +30,7 @@ const TodaysMatches = ({ match}) => {
                   <h5 className='match_team_names'>{match.homeTeam.name}</h5>
                   </Col>
                   <Col sm={2} className='teams'>
-                    <Card.Text id='match_time'> {match.score.fullTime.homeTeam} - {match.score.fullTime.awayTeam} </Card.Text>
+                    <Card.Text id='match_time'> {match.score.fullTime.home} - {match.score.fullTime.away} </Card.Text>
                     <Card.Text className='match_text'> Kick Off </Card.Text>
                     <Card.Text className='match_text'> {gameTime} (GMT+1) </Card.Text>
                   </Col>

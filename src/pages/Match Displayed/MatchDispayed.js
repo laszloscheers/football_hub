@@ -207,7 +207,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                                 </Col>
                                                 <Col className='score_last_5'>
                                                  <Container>
-                                                  <b>{match.score.fullTime.homeTeam && match.score.fullTime.homeTeam} - {match.score.fullTime.awayTeam && match.score.fullTime.awayTeam}</b>
+                                                  <b>{match.score.fullTime.home && match.score.fullTime.home} - {match.score.fullTime.home && match.score.fullTime.away}</b>
                                                   <br></br>
                                                   <span className='date_last_5'>{format(new Date(`${match.utcDate}`), 'dd/MM/yy')}</span>
                                                  </Container>
@@ -233,7 +233,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                                 </Col>
                                                 <Col className='score_last_5'>
                                                  <Container>
-                                                  <b>{match.score.fullTime.homeTeam && match.score.fullTime.homeTeam} - {match.score.fullTime.awayTeam && match.score.fullTime.awayTeam}</b>
+                                                  <b>{match.score.fullTime.home && match.score.fullTime.home} - {match.score.fullTime.away && match.score.fullTime.away}</b>
                                                   <br></br>
                                                   <span className='date_last_5'>{format(new Date(`${match.utcDate}`), 'dd/MM/yy')}</span>
                                                  </Container>

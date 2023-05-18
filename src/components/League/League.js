@@ -13,7 +13,8 @@ const League = ({ competition, leagueTable, topScorersTable, matches }) => {
     const competitionSearch = Object.values(mapLeagues).find((competitionSearch) => {
         return competitionSearch.name.includes(competition.name.toLowerCase());
     });
-    console.log(competition.name.toLowerCase())
+    console.log(competition.name.toLowerCase());
+    console.log(competition);
     return (
         <div className='league_table_titles'>
           <Container>
