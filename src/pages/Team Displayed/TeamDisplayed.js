@@ -33,6 +33,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
     const team = Object.values(clubId).find((team) => {
         return team.name.includes(query.state);
     });
+    console.log(query.state)
+    console.log(team)
 
 
     //Length of the mapAPIs
