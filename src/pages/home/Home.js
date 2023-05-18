@@ -109,7 +109,7 @@ const Home = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) =
         e.preventDefault();
         if(Team1SearchValue && Team2SearchValue){
             //Sends the search value to the LeagueDIsplayed page to make the API call by 'state'
-            history('/matchsearch/', {state: {team1: Team1SearchValue, team2: Team2SearchValue}});
+            history('/matchsearch', {state: {team1: Team1SearchValue, team2: Team2SearchValue}});
         } else {
             alert("Please type a both clubs names");
         }
