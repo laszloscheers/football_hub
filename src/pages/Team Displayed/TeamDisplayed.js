@@ -66,6 +66,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             for (let j = 0; j<getTeamLeagues.data.runningCompetition.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
                                 leagues.push(getTeamLeagues.data.runningCompetition.code);
+                                console.log(getTeamLeagues.data.runningCompetition.code);
+                                console.log(leagues);
                             }
                             //Stops the loop
                             apiCall = false;
