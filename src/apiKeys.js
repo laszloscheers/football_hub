@@ -39,7 +39,7 @@ export const config = {
   }
   export const footballApi3 = {
     link1: "/api/competitions/",
-    link2: "matches?matchday="
+    link2: "/matches?matchday="
   };
 
 // API info for odds

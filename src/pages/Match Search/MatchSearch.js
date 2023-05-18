@@ -99,7 +99,7 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                         do{
                             try{
                                 //Fetching the leagues that that the team is involved via API
-                                const getMatches = await axios.get(mapAPIs[m].link + "competitions/" + leaguesForTeams[l] + "matches",
+                                const getMatches = await axios.get(mapAPIs[m].link + "competitions/" + leaguesForTeams[l] + "/matches",
                                 { headers: { "X-Auth-Token": mapAPIs[m].token } });
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
