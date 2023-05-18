@@ -36,6 +36,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
     
     console.log(query.state)
     console.log(team)
+    console.log(teamMatches)
 
 
     //Length of the mapAPIs
