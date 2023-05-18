@@ -85,7 +85,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
 
                     i++;
                     //Runs three times because that's the number of keys that we have
-                } while(apiCall && i<apiLength);
+                } while(apiCall || i<apiLength);
 
                 //Leagues array for all the matches by leagues that a club plays in
                 let matchesByLeagues = [];
