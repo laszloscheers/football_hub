@@ -55,12 +55,12 @@ function App() {
     // Fetch Info about the league of the favourite club of user
     const fetchLeagueInfo = async (team) => {
         // Find League Name
-        const favouriteLeague = team.activeCompetitions[0].name;
+        const favouriteLeague = team.runningCompetition[0].name;
         // Find the Id of the league
         let favouriteLeagueId = findLeagueId(favouriteLeague);
         // Check for bundesliga, seria a bug
         if (favouriteLeagueId === "TryAgain") {
-            favouriteLeagueId = findLeagueId(team.activeCompetitions[1].name);
+            favouriteLeagueId = findLeagueId(team.runningCompetition[1].name);
         }
         console.log(favouriteLeagueId);
         // Fetch Standings
