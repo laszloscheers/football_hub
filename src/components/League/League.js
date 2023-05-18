@@ -29,9 +29,6 @@ const League = ({ competition, leagueTable, topScorersTable, matches }) => {
                           <div>
                               <div id='league_title_leagues_page'><h2>{competition.name}</h2></div >
                           </div>
-                          <div>
-                              <div ><h4>{competition.area.name}</h4></div >
-                          </div>
                       </div>
                   </div>
           </div>

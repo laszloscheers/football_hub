@@ -30,12 +30,21 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
     //Stores the last five matches of both teams
     const [ last5Matches1, setLast5Matches1 ] = useState("");
     const [ last5Matches2, setLast5Matches2 ] = useState("");
+
+    //Img for the competition
+    const [ competition, setCompetition ] = useState("");
     
     console.log(query.state);
 
     useEffect(() => {
         //If a query came trhought useLocation and a team id was found for that query
         if (query.state) {
+
+            //Finds the img for the competition
+            const competitionSearch = Object.values(mapLeagues).find((competitionSearch) => {
+                return competitionSearch.name.includes(query.state.competition.name.toLowerCase());
+            });
+            setCompetition(competitionSearch);
 
             async function fetchData() {
                 //Leagues array for all the leagues that the clubs plays in
@@ -127,7 +136,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                                 <div className='matchDisplayedHero'>
                                     <div>
                                     <   div className='matchDisplayedImg'>
-                                            <img src={"../"+query.state.competition.logo} alt={query.state.competition.name + ' logo'}></img> 
+                                            <img src={"../"+ competition.logo} alt={query.state.competition.name + ' logo'}></img> 
                                         </div>
                                         <div>
                                             <div ><h2>{query.state.competition.name}</h2></div >
