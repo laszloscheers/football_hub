@@ -59,6 +59,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         //Fetching the leagues that that the team is involved via API
                         const getTeamLeagues  = await axios.get(mapAPIs[i].link + "teams/" + team.id,
                         { headers: { "X-Auth-Token": mapAPIs[i].token } });
+                        console.log(getTeamLeagues);
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
@@ -77,8 +78,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                     }catch {
                         //If it is the third error it redirects to the home page and send the error "Too many requests"
                         if (i===apiLength-1){
-                            setError("Too many requests, try again later1")
-                            console.log("Too many requests, try again later1")
+                            setError("Too many requests, try again later")
+                            console.log("Too many requests, try again later")
                         }else{
                             //If an error is catched keeps the loop running so it makes another call to another apiKey
                             apiCall = true;
@@ -121,8 +122,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             }catch (e){
                                 //If it's the last loop and matchesByLeagues still empty, sets the error to be "Too many requests" and redirects to home page
                                 if(!matchesByLeagues && k===leagues.length-1 && l===apiLength-1){
-                                    setError("Too many requests, try again later2")
-                                    console.log("Too many requests, try again later2")
+                                    setError("Too many requests, try again later")
+                                    console.log("Too many requests, try again later")
                                 } else{
                                     // If an error is catched stopes the loop
                                     apiCall2 = true;
