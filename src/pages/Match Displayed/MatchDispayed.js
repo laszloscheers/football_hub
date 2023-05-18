@@ -34,8 +34,6 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
 
     //Img for the competition
     const [ competition, setCompetition ] = useState("");
-    
-    console.log(query.state);
 
     useEffect(() => {
         //If a query came trhought useLocation and a team id was found for that query
