@@ -30,7 +30,7 @@ const MiniLeagueTable = ({ standings }) => {
                                 <td>{team.position}.</td>
                                 <td>
                                     <div className='smallCrestContainer'>
-                                        <img className='smallCrest' src={team.team.crestUrl} alt="crest" />
+                                        <img className='smallCrest' src={team.team.crest} alt="crest" />
                                     </div>
                                 </td>
                                 <td>{team.playedGames}</td>
