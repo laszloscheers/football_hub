@@ -52,7 +52,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                 let leagues = [];
 
                 //Makes API calls to different token keys untill one is successful
-                let apiCall = false;
+                let apiCall = true;
                 var i = 0;
                 do{
                     try{
@@ -99,13 +99,14 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                     let leagueName;
                     for(var m = 0; m<status.length; m++){
                         //Makes API calls to different token keys untill one is successful
-                        var apiCall2 = false;
+                        var apiCall2 = true;
                         var l = 0;
                         do{
                             try{
                                 //Fetching the leagues that that the team is involved via API
                                 const getMatches = await axios.get(mapAPIs[l].link + "competitions/" + leagues[k] + "/matches",
                                 { headers: { "X-Auth-Token": mapAPIs[l].token }, params:{status: status[m]} });
+                                console.log(getMatches);
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
                                     //Filters all the matches where the team plays as awayTeam and as homeTeam
@@ -147,7 +148,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                 }
             }
             fetchData();
-            
+
         } else if (query.state){
             //If the state has come but there was no matches fot the team queried
             setError("There were no matches for that Club")
