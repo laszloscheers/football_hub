@@ -91,7 +91,7 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
 
                             {/* Club Crest */}
                             <div className="crestContainer">
-                                <img className='crest' src={favouriteTeam?.crestUrl} alt="club crest" />
+                                <img className='crest' src={favouriteTeam?.crest} alt="club crest" />
                             </div>
 
                             {/* Club Name */}
