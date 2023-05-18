@@ -8,7 +8,6 @@ import ReactLoading from 'react-loading';
 import './matchdisplayed.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { clubCrests, mapAPIs } from '../../apiKeys';
-import { mapLeagues, mapOddsLeagues } from '../../helperFunctions';
 import Match from '../../components/Match/Match';
 
 const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) => {
@@ -17,7 +16,7 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
     const query = useLocation();
 
     // React-router-dom Method for pushing to different page
-    const history = useNavigate()
+    const history = useNavigate();
 
     //Error for Home page
     const [error, setError] = useState("");
@@ -28,111 +27,65 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
     //Length of the mapAPIs
     const apiLength = Object.keys(mapAPIs).length;
 
-    //Stores the league title and area
-    const [ leagueTitle, setLeagueTitle ] = useState(""); 
-    const [ leagueArea, setLeagueArea ] = useState("");
-    const [ competition, setCompetition ] = useState("");
-
     //Stores the last five matches of both teams
     const [ last5Matches1, setLast5Matches1 ] = useState("");
     const [ last5Matches2, setLast5Matches2 ] = useState("");
-    console.log(query.state)
+    
+    console.log(query.state);
+
     useEffect(() => {
         //If a query came trhought useLocation and a team id was found for that query
         if (query.state) {
-            const settingLeagueTitle = () => {
-                let LeagueName ="";
-        
-                if (query.state.season.id === 733) {
-                setLeagueTitle(mapOddsLeagues[0].name);
-                setLeagueArea("England");
-                LeagueName = mapOddsLeagues[0].name;
-                }
-                else if (query.state.season.id === 735){
-                setLeagueTitle(mapOddsLeagues[5].name);
-                setLeagueArea("England");
-                LeagueName = mapOddsLeagues[5].name;
-                }
-                else if (query.state.season.id=== 757){
-                setLeagueTitle(mapOddsLeagues[3].name);
-                setLeagueArea("Italy");
-                LeagueName = mapOddsLeagues[3].name;
-                }
-                else if (query.state.season.id === 746){
-                setLeagueTitle(mapOddsLeagues[2].name);
-                setLeagueArea("France");
-                LeagueName = mapOddsLeagues[2].name;
-                }
-                else if (query.state.season.id === 742){
-                setLeagueTitle(mapOddsLeagues[1].name);
-                setLeagueArea("Germany");
-                LeagueName = mapOddsLeagues[1].name;
-                }
-                else if (query.state.season.id === 380){
-                setLeagueTitle(mapOddsLeagues[4].name);
-                setLeagueArea("Italy");
-                LeagueName = mapOddsLeagues[4].name;
-                }
-        
-                //Finds the img for the competition
-                const competitionSearch = Object.values(mapLeagues).find((competitionSearch) => {
-                    return competitionSearch.name.includes(LeagueName.toLowerCase());
-                });
-                setCompetition(competitionSearch)
-            }
-            settingLeagueTitle();
 
+            async function fetchData() {
+                //Leagues array for all the leagues that the clubs plays in
+                let setLast5Matches1Array = [];
+                let setLast5Matches2Array = [];
 
-        async function fetchData() {
-            //Leagues array for all the leagues that the clubs plays in
-            let setLast5Matches1Array = [];
-            let setLast5Matches2Array = [];
+                //Makes API calls to different token keys untill one is successful
+                let apiCall = false;
+                var i = 0;
+                do{
+                    try{
+                        // Fetch Team 1 Fixtures
+                        const data1 = await axios.get(mapAPIs[i].link + "teams/" + query.state.homeTeam.id + "/matches",
+                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
+                        // Fetch Team Fixtures
+                        const data2 = await axios.get(mapAPIs[i].link + "teams/" + query.state.awayTeam.id + "/matches",
+                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
 
-            //Makes API calls to different token keys untill one is successful
-            let apiCall = false;
-            var i = 0;
-            do{
-                try{
-                    // Fetch Team 1 Fixtures
-                    const data1 = await axios.get(mapAPIs[i].link + "teams/" + query.state.homeTeam.id + "/matches",
-                    { headers: { "X-Auth-Token": mapAPIs[i].token } });
-                    // Fetch Team Fixtures
-                    const data2 = await axios.get(mapAPIs[i].link + "teams/" + query.state.awayTeam.id + "/matches",
-                    { headers: { "X-Auth-Token": mapAPIs[i].token } });
-
-                    //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
-                    if(data1.status ===  200 && data2.status ===  200){
-                        // Method to find last 5 matches
-                        const results1 = data1.data.matches.filter(match => match.status === "FINISHED");
-                        const last51 = results1.slice(-6).reverse();
-                        setLast5Matches1Array =last51.slice(1);
-                        const results2 = data2.data.matches.filter(match => match.status === "FINISHED");
-                        const last52 = results2.slice(-6).reverse();
-                        setLast5Matches2Array =last52.slice(1);
-                        //Stops the loop
-                        apiCall = false;
+                        //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
+                        if(data1.status ===  200 && data2.status ===  200){
+                            // Method to find last 5 matches
+                            const results1 = data1.data.matches.filter(match => match.status === "FINISHED");
+                            const last51 = results1.slice(-6).reverse();
+                            setLast5Matches1Array =last51.slice(1);
+                            const results2 = data2.data.matches.filter(match => match.status === "FINISHED");
+                            const last52 = results2.slice(-6).reverse();
+                            setLast5Matches2Array =last52.slice(1);
+                            //Stops the loop
+                            apiCall = false;
+                        }
+                    }catch {
+                        //If it is the third error it redirects to the home page and send the error "Too many requests"
+                        if (!setLast5Matches1Array && !setLast5Matches1Array && i===apiLength-1){
+                            setError("Too many requests, try again later")
+                            console.log("Too many requests, try again later")
+                        }else{
+                            //If an error is catched keeps the loop running so it makes another call to another apiKey
+                            apiCall = true;
+                        }
                     }
-                }catch {
-                    //If it is the third error it redirects to the home page and send the error "Too many requests"
-                    if (!setLast5Matches1Array && !setLast5Matches1Array && i===apiLength-1){
-                        setError("Too many requests, try again later")
-                        console.log("Too many requests, try again later")
-                    }else{
-                        //If an error is catched keeps the loop running so it makes another call to another apiKey
-                        apiCall = true;
-                    }
+
+                    i++;
+                    //Runs three times because that's the number of keys that we have
+                } while(apiCall && i<apiLength);
+                //sets matchesByLeague in the useStete in order to display it in the web page
+                if(setLast5Matches1Array.length && setLast5Matches1Array.length){
+                    setLast5Matches1(setLast5Matches1Array);
+                    setLast5Matches2(setLast5Matches2Array);
+                    setLoading(false);
                 }
-
-                i++;
-                //Runs three times because that's the number of keys that we have
-            } while(apiCall && i<apiLength);
-            //sets matchesByLeague in the useStete in order to display it in the web page
-            if(setLast5Matches1Array.length && setLast5Matches1Array.length){
-                setLast5Matches1(setLast5Matches1Array);
-                setLast5Matches2(setLast5Matches2Array);
-                setLoading(false);
-            }
-
         }
         fetchData();
 
@@ -170,17 +123,17 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                     )}
                     <div className='matchDisplayedContent'>
                         <div>
-                            <Link to={'/leagues/' + leagueTitle.toLowerCase()} state={leagueTitle.toLowerCase()}>
+                            <Link to={'/leagues/' + query.state.competition.name.toLowerCase()} state={query.state.competition.name.toLowerCase()}>
                                 <div className='matchDisplayedHero'>
                                     <div>
                                     <   div className='matchDisplayedImg'>
-                                            <img src={"../"+competition.logo} alt={leagueTitle + ' logo'}></img> 
+                                            <img src={"../"+query.state.competition.logo} alt={query.state.competition.name + ' logo'}></img> 
                                         </div>
                                         <div>
-                                            <div ><h2>{leagueTitle}</h2></div >
+                                            <div ><h2>{query.state.competition.name}</h2></div >
                                         </div>
                                         <div>
-                                            <div ><h4>{leagueArea}</h4></div >
+                                            <div ><h4>{query.state.area.name}</h4></div >
                                         </div>
                                     </div>
                                 </div>

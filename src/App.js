@@ -96,9 +96,6 @@ function App() {
        }
     }, [favouriteTeam]);
 
-
-    console.log(favouriteTeam);
-
     return (
 
         <Router>
