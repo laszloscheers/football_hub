@@ -141,11 +141,13 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
 
                 }
                 //sets matchesByLeague in the useStete in order to display it in the web page
-                setTeamMatches(matchesByLeagues);
-                setLoading(false);
+                if(matchesByLeagues){
+                    setTeamMatches(matchesByLeagues);
+                    setLoading(false);
+                }
             }
-            
             fetchData();
+            
         } else if (query.state){
             //If the state has come but there was no matches fot the team queried
             setError("There were no matches for that Club")
