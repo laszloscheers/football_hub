@@ -6,7 +6,7 @@ import ReactLoading from 'react-loading';
 
 import './teamdisplayed.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import { clubId, mapCompetitions } from '../../helperFunctions';
+import { clubId } from '../../helperFunctions';
 import { mapAPIs,clubCrests } from '../../apiKeys';
 import Match from '../../components/Match/Match';
 
