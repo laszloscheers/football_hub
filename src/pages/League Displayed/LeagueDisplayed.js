@@ -46,11 +46,11 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
             try{
 
                 //Fetching the standings, top scorers and matches from the API where i is the API in apiKeys' array
-                const getLeagueTable = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "standings",
+                const getLeagueTable = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/standings",
                     { headers: { "X-Auth-Token": mapAPIs[0].token } });
-                const getLeagueTopGSs = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "scorers",
+                const getLeagueTopGSs = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/scorers",
                     { headers: { "X-Auth-Token": mapAPIs[0].token } });
-                const getMatches = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "matches",
+                const getMatches = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/matches",
                     { headers: { "X-Auth-Token": mapAPIs[0].token } });
             
                 //If the status of the requests is ok it stores the standings, top scorers and matchess in useState and stops the loop
