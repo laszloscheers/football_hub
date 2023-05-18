@@ -65,12 +65,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             //Stores in an array the leagues' codes for that teams
                             for (let j = 0; j<getTeamLeagues.data.runningCompetition.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
-                                const competition = Object.values(mapCompetitions).find((competition) => {
-                                    return competition.name.includes(getTeamLeagues.data.runningCompetition[j].name.toLowerCase());
-                                });
-                                if(competition){
-                                    leagues.push(competition.code);
-                                }
+                                getTeamLeagues.data.runningCompetition.code.push(competition.code);
                             }
                             //Stops the loop
                             apiCall = false;
@@ -85,11 +80,10 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             apiCall = true;
                         }
                     }
-
                     i++;
-                    //Runs three times because that's the number of keys that we have
+                    //Runs "apiLength" times because that's the number of keys that we have
                 } while(apiCall && i<apiLength);
-
+                console.log(leagues)
                 //Leagues array for all the matches by leagues that a club plays in
                 let matchesByLeagues = [];
                 const status = ["SCHEDULED", "FINISHED"]
