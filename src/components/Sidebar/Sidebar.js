@@ -137,11 +137,11 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
                                             <div style={{ fontSize: "12px" }}>{format(new Date(`${match.utcDate}`), 'dd/MM/yy')}</div>
                                             <div>
                                                 <span className='resultName'>{match.homeTeam.name}</span> 
-                                                <span className='resultScore'>{match.score.fullTime.homeTeam}</span>
+                                                <span className='resultScore'>{match.score.fullTime.home}</span>
                                             </div>
                                             <div className='awayTeam'>
                                                 <span className='resultName'>{match.awayTeam.name}</span>
-                                                <span className='resultScore'>{match.score.fullTime.awayTeam}</span>
+                                                <span className='resultScore'>{match.score.fullTime.away}</span>
                                             </div>
                                         </div>
                                     </Link>
@@ -199,11 +199,11 @@ const Sidebar = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }
                                         <div style={{ fontSize: "12px" }}>{format(new Date(`${match.utcDate}`), 'dd/MM/yy')}</div>
                                         <div>
                                             <span className='resultName'>{match.homeTeam.name}</span>
-                                            <span className='resultScore'>{match.score.fullTime.homeTeam}</span>
+                                            <span className='resultScore'>{match.score.fullTime.home}</span>
                                         </div>
                                         <div className='awayTeam'>
                                             <span className='resultName'>{match.awayTeam.name}</span>
-                                            <span className='resultScore'>{match.score.fullTime.awayTeam}</span>
+                                            <span className='resultScore'>{match.score.fullTime.away}</span>
                                         </div>
                                     </div>
                                 ))}
