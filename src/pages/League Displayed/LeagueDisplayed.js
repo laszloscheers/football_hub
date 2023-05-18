@@ -34,8 +34,6 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
         return competition.name.includes(query.state);
     });
 
-    console.log(query.state);
-
     //Length of the mapAPIs
     const apiLength = Object.keys(mapAPIs).length
 
