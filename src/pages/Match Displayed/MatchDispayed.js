@@ -9,6 +9,7 @@ import './matchdisplayed.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import { clubCrests, mapAPIs } from '../../apiKeys';
 import Match from '../../components/Match/Match';
+import { mapLeagues} from '../../helperFunctions';
 
 const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) => {
 
