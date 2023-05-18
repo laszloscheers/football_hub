@@ -60,10 +60,10 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
-                            for (let k = 0; k<getTeamLeagues.data.activeCompetitions.length; k++) {
+                            for (let k = 0; k<getTeamLeagues.data.runningCompetition.length; k++) {
                                 // Sends the competition name to check if it's one of the availables ones
                                 const competition = Object.values(mapCompetitions).find((competition) => {
-                                    return competition.name.includes(getTeamLeagues.data.activeCompetitions[k].name.toLowerCase());
+                                    return competition.name.includes(getTeamLeagues.data.runningCompetition[k].name.toLowerCase());
                                 });
                                 if(competition){
                                     leaguesForTeams.push(competition.code);

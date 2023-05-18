@@ -52,7 +52,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                 let leagues = [];
 
                 //Makes API calls to different token keys untill one is successful
-                let apiCall = true;
+                let apiCall = false;
                 var i = 0;
                 do{
                     try{
@@ -63,10 +63,10 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
-                            for (let j = 0; j<getTeamLeagues.data.activeCompetitions.length; j++) {
+                            for (let j = 0; j<getTeamLeagues.data.runningCompetition.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
                                 const competition = Object.values(mapCompetitions).find((competition) => {
-                                    return competition.name.includes(getTeamLeagues.data.activeCompetitions[j].name.toLowerCase());
+                                    return competition.name.includes(getTeamLeagues.data.runningCompetition[j].name.toLowerCase());
                                 });
                                 if(competition){
                                     leagues.push(competition.code);
@@ -99,7 +99,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                     let leagueName;
                     for(var m = 0; m<status.length; m++){
                         //Makes API calls to different token keys untill one is successful
-                        var apiCall2 = true;
+                        var apiCall2 = false;
                         var l = 0;
                         do{
                             try{
