@@ -63,10 +63,10 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
-                            for (let j = 0; j<getTeamLeagues.data.runningCompetition.length; j++) {
+                            for (let j = 0; j<getTeamLeagues.data.runningCompetitions.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
-                                // leagues.push(getTeamLeagues.data.runningCompetition.code);
-                                console.log(getTeamLeagues.data.runningCompetition.code);
+                                leagues.push(getTeamLeagues.data.runningCompetitions.code);
+                                console.log(getTeamLeagues.data.runningCompetitions.code);
                             }
                             //Stops the loop
                             apiCall = false;
@@ -86,7 +86,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
 
                     i++;
                     //Runs three times because that's the number of keys that we have
-                } while(apiCall || i<apiLength);
+                } while(apiCall && i<apiLength);
 
                 //Leagues array for all the matches by leagues that a club plays in
                 let matchesByLeagues = [];
