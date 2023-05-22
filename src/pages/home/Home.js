@@ -64,6 +64,7 @@ const Home = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) =
                     //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                     if(getTodaysMatches.status ===  200){
                         setTodaysMatches(getTodaysMatches);
+                        console.log(getTodaysMatches)
                         apiCall = false;
                         setLoading(false);
                     }
