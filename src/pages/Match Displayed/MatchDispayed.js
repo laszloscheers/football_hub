@@ -57,10 +57,10 @@ const MatchDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFix
                     try{
                         // Fetch Team 1 Fixtures
                         const data1 = await axios.get(mapAPIs[i].link + "teams/" + query.state.homeTeam.id + "/matches",
-                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
+                        { headers: { "X-Auth-Token": mapAPIs[i].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
                         // Fetch Team Fixtures
                         const data2 = await axios.get(mapAPIs[i].link + "teams/" + query.state.awayTeam.id + "/matches",
-                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
+                        { headers: { "X-Auth-Token": mapAPIs[i].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
 
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(data1.status ===  200 && data2.status ===  200){

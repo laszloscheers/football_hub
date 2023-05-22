@@ -56,15 +56,15 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                     try{
                         //Fetching the leagues that that the team is involved via API
                         const getTeamLeagues  = await axios.get(mapAPIs[i].link + "teams/" + team1.id,
-                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
+                        { headers: { "X-Auth-Token": mapAPIs[i].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
                         console.log(getTeamLeagues)
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
-                            for (let k = 0; k<getTeamLeagues.data.runningCompetition.length; k++) {
+                            for (let k = 0; k<getTeamLeagues.data.runningCompetitions.length; k++) {
                                 // Sends the competition name to check if it's one of the availables ones
                                 const competition = Object.values(mapCompetitions).find((competition) => {
-                                    return competition.name.includes(getTeamLeagues.data.runningCompetition[k].name.toLowerCase());
+                                    return competition.name.includes(getTeamLeagues.data.runningCompetitions[k].name.toLowerCase());
                                 });
                                 if(competition){
                                     leaguesForTeams.push(getTeamLeagues.data.runningCompetitions[k].code);
@@ -101,7 +101,7 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                             try{
                                 //Fetching the leagues that that the team is involved via API
                                 const getMatches = await axios.get(mapAPIs[m].link + "competitions/" + leaguesForTeams[l] + "/matches",
-                                { headers: { "X-Auth-Token": mapAPIs[m].token } });
+                                { headers: { "X-Auth-Token": mapAPIs[m].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
                                 console.log(getMatches)
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
