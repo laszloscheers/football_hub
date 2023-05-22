@@ -101,6 +101,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                                 //Fetching the leagues that that the team is involved via API
                                 const getMatches = await axios.get(mapAPIs[l].link + "competitions/" + leagues[k] + "/matches",
                                 { headers: { "X-Auth-Token": mapAPIs[l].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/" }, params:{status: status[m]} });
+                                console.log(getMatches)
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
                                     //Filters all the matches where the team plays as awayTeam and as homeTeam
