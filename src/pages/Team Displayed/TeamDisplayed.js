@@ -6,7 +6,7 @@ import ReactLoading from 'react-loading';
 
 import './teamdisplayed.css';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import { clubId } from '../../helperFunctions';
+import { clubId, mapCompetitions } from '../../helperFunctions';
 import { mapAPIs,clubCrests } from '../../apiKeys';
 import Match from '../../components/Match/Match';
 
@@ -60,7 +60,12 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             //Stores in an array the leagues' codes for that teams
                             for (let j = 0; j<getTeamLeagues.data.runningCompetitions.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
-                                leagues.push(getTeamLeagues.data.runningCompetitions[j].code);
+                                const competition = Object.values(mapCompetitions).find((competition) => {
+                                    return competition.name.includes(getTeamLeagues.data.runningCompetitions[j].name.toLowerCase());
+                                });
+                                if(competition){
+                                    leagues.push(getTeamLeagues.data.runningCompetitions[j].code);
+                                }
                             }
                             //Stops the loop
                             apiCall = false;
