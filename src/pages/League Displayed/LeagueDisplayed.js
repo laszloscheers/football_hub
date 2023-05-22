@@ -62,8 +62,6 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
                             const leagueStandingData = allLeagueData[0].data.standings[0].table
                             const leagueTopGSsData = allLeagueData[1].data.scorers
                             const leagueMatchesData = allLeagueData[2].data.matches
-                            //console.log
-                            //console.log(leagueCompetitionName, leagueStandingData, leagueTopGSsData, leagueMatchesData)
                             //setting 
                             setCompetition(leagueCompetitionName);
                             setLeagueTable(leagueStandingData);

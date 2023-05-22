@@ -11,7 +11,6 @@ const TodaysMatches = ({ match}) => {
     const format1 = `${match.status}`.replace("_", " ")
     const format2 = format1.toLowerCase();
 
-    console.log(match)
     return (
         <div>
             <Link id='today_match_link'to={'/match'} state={match}>

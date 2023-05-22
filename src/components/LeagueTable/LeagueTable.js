@@ -4,7 +4,6 @@ import { Container, Table } from 'react-bootstrap';
 import './leagueTable.css';
 
 const LeagueTable = ({ standings }) => {
-  console.log(standings);
     return (
         <Container id='league_table_container'>
          {standings.map((team, index) => (

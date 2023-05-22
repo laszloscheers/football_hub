@@ -21,7 +21,6 @@ function OddsLeaguesDisplayed({ username, favouriteTeam, favouriteLeague, favour
     const getOdds = await axios.get(OddsApi1.link1 + oddsCode + OddsApi1.link2 + OddsApi1.token3 + OddsApi1.link4);
     const results = getOdds.data
     setOdds(results);
-    console.log(results)
     setLoading(false);
   },[oddsCode]);
 
