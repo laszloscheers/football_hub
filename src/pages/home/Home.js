@@ -319,7 +319,7 @@ const Home = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) =
                         </div>
                         <div className='todaysMatchesContainer'>
                             <h1 id='today_matches_title'>Today's Matches</h1>
-                            {todaysMatches.data.matches.map((match, index) => 
+                            {todaysMatches.matches.map((match, index) => 
                                 <TodaysMatches match={match} key={index}/>
                             )}
                         </div>
