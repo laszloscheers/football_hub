@@ -33,7 +33,6 @@ const Register = () => {
 
         // Check that 2 passwords are the same - if not throw an alert
         if (passwordVerifyRef.current.value !== passwordRef.current.value) {
-            console.log("shit");
             // Send Invalidation message if they dont match
             alert("Passwords don't match");
 

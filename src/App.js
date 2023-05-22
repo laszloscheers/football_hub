@@ -62,7 +62,6 @@ function App() {
         if (favouriteLeagueId === "TryAgain") {
             favouriteLeagueId = findLeagueId(team.runningCompetition[1].name);
         }
-        console.log(favouriteLeagueId);
         // Fetch Standings
         const data = await axios.get(sideBarApi.link + "competitions/" + favouriteLeagueId + "/standings",
             { headers: { "X-Auth-Token": sideBarApi.token } });

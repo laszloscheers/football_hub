@@ -50,7 +50,6 @@ const GameWeekMatches = ({ username, favouriteTeam, favouriteLeague, favouriteFi
      setBl1Matches(bl1Data)
      setElcMatches(elcData)
      setPdMatches(pdData)
-     console.log(pdData)
 
      //setting matchday counters
      const counterForEngItaEspFra = allData[0].data.matches[0].season.currentMatchday

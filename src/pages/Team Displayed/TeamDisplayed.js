@@ -53,8 +53,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                     try{
                         //Fetching the leagues that that the team is involved via API
                         const getTeamLeagues  = await axios.get(mapAPIs[i].link + "teams/" + team.id,
-                        { headers: { "X-Auth-Token": mapAPIs[i].token } });
-                        console.log(getTeamLeagues);
+                        { headers: { "X-Auth-Token": mapAPIs[i].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/"} });
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
@@ -75,7 +74,6 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         if (i===apiLength-1){
                             setError("Too many requests, try again later")
                             console.log("Too many requests, try again later")
-                            console.log(leagues);
 
                         }else{
                             //If an error is catched keeps the loop running so it makes another call to another apiKey
@@ -102,8 +100,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             try{
                                 //Fetching the leagues that that the team is involved via API
                                 const getMatches = await axios.get(mapAPIs[l].link + "competitions/" + leagues[k] + "/matches",
-                                { headers: { "X-Auth-Token": mapAPIs[l].token }, params:{status: status[m]} });
-                                console.log(getMatches);
+                                { headers: { "X-Auth-Token": mapAPIs[l].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/" }, params:{status: status[m]} });
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
                                     //Filters all the matches where the team plays as awayTeam and as homeTeam
