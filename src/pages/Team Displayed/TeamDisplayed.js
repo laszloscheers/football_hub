@@ -34,11 +34,6 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
         return team.name.includes(query.state);
     });
     
-    console.log(query.state)
-    console.log(team)
-    console.log(teamMatches)
-
-
     //Length of the mapAPIs
     const apiLength = Object.keys(mapAPIs).length
   
@@ -65,8 +60,7 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             //Stores in an array the leagues' codes for that teams
                             for (let j = 0; j<getTeamLeagues.data.runningCompetitions.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
-                                leagues.push(getTeamLeagues.data.runningCompetitions.code);
-                                console.log(getTeamLeagues.data.runningCompetitions.code);
+                                leagues.push(getTeamLeagues.data.runningCompetitions[j].code);
                             }
                             //Stops the loop
                             apiCall = false;
