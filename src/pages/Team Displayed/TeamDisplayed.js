@@ -65,9 +65,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                             //Stores in an array the leagues' codes for that teams
                             for (let j = 0; j<getTeamLeagues.data.runningCompetition.length; j++) {
                                 // Sends the competition name to check if it's one of the availables ones
-                                leagues.push(getTeamLeagues.data.runningCompetition.code);
+                                // leagues.push(getTeamLeagues.data.runningCompetition.code);
                                 console.log(getTeamLeagues.data.runningCompetition.code);
-                                console.log(leagues);
                             }
                             //Stops the loop
                             apiCall = false;
@@ -77,6 +76,8 @@ const TeamDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFixt
                         if (i===apiLength-1){
                             setError("Too many requests, try again later")
                             console.log("Too many requests, try again later")
+                            console.log(leagues);
+
                         }else{
                             //If an error is catched keeps the loop running so it makes another call to another apiKey
                             apiCall = true;
