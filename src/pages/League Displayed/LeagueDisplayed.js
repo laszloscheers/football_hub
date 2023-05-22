@@ -47,11 +47,11 @@ const LeagueDisplayed = ({ username, favouriteTeam, favouriteLeague, favouriteFi
 
                 //Fetching the standings, top scorers and matches from the API where i is the API in apiKeys' array
                 const getLeagueTable = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/standings",
-                    { headers: { "X-Auth-Token": mapAPIs[0].token } });
+                    { headers: { "X-Auth-Token": mapAPIs[0].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
                 const getLeagueTopGSs = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/scorers",
-                    { headers: { "X-Auth-Token": mapAPIs[0].token } });
+                    { headers: { "X-Auth-Token": mapAPIs[0].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
                 const getMatches = await axios.get(mapAPIs[0].link + "competitions/" + leagueId + "/matches",
-                    { headers: { "X-Auth-Token": mapAPIs[0].token } });
+                    { headers: { "X-Auth-Token": mapAPIs[0].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
             
                 //If the status of the requests is ok it stores the standings, top scorers and matchess in useState and stops the loop
                 if(getLeagueTable.status ===  200 && getLeagueTopGSs.status ===  200 && getMatches.status ===  200){

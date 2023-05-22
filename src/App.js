@@ -42,13 +42,13 @@ function App() {
 
         // Fetch Team Infomation
         const data = await axios.get(sideBarApi.link + "teams/" + clubId,
-            { headers: { "X-Auth-Token": sideBarApi.token } });
+            { headers: { "X-Auth-Token": sideBarApi.token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
         // Store in state 
         setFavouriteTeam(data.data);
 
         // Fetch Team Fixtures
         const data2 = await axios.get(sideBarApi.link + "teams/" + clubId + "/matches",
-            { headers: { "X-Auth-Token": sideBarApi.token } });
+            { headers: { "X-Auth-Token": sideBarApi.token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
         setFavouriteFixtures(data2.data.matches);
     };
 
@@ -64,7 +64,7 @@ function App() {
         }
         // Fetch Standings
         const data = await axios.get(sideBarApi.link + "competitions/" + favouriteLeagueId + "/standings",
-            { headers: { "X-Auth-Token": sideBarApi.token } });
+            { headers: { "X-Auth-Token": sideBarApi.token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
         setFavouriteLeague(data.data.standings[0].table);
     };
 
