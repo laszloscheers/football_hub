@@ -60,8 +60,7 @@ const Home = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) =
                 try{
                     //Fetches the data from the API where i is the API in apiKeys' array
                     const getTodaysMatches = await axios.get(mapAPIs[i].link + "matches",
-                    { headers: { "X-Auth-Token": mapAPIs[i].token, 'Access-Control-Allow-Origin' : '*',
-                    'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',  } });
+                    { headers: { "X-Auth-Token": mapAPIs[i].token } });
                     console.log(mapAPIs[i].link + "matches")
 
                     //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
@@ -322,7 +321,7 @@ const Home = ({ username, favouriteTeam, favouriteLeague, favouriteFixtures }) =
                         </div>
                         <div className='todaysMatchesContainer'>
                             <h1 id='today_matches_title'>Today's Matches</h1>
-                            {todaysMatches.matches.map((match, index) => 
+                            {todaysMatches.data.matches.map((match, index) => 
                                 <TodaysMatches match={match} key={index}/>
                             )}
                         </div>
