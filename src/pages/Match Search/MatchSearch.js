@@ -66,7 +66,7 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                                     return competition.name.includes(getTeamLeagues.data.runningCompetition[k].name.toLowerCase());
                                 });
                                 if(competition){
-                                    leaguesForTeams.push(competition.code);
+                                    leaguesForTeams.push(getTeamLeagues.data.runningCompetitions[k].code);
                                 }
 
                             }
