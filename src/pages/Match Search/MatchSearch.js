@@ -57,7 +57,6 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                         //Fetching the leagues that that the team is involved via API
                         const getTeamLeagues  = await axios.get(mapAPIs[i].link + "teams/" + team1.id,
                         { headers: { "X-Auth-Token": mapAPIs[i].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
-                        console.log(getTeamLeagues)
                         //If the status of the request is ok it stores matches in useState, stops the loop, and displays the data in the webpage
                         if(getTeamLeagues.status ===  200){
                             //Stores in an array the leagues' codes for that teams
@@ -102,7 +101,6 @@ const MatchSearch = ({ username, favouriteTeam, favouriteLeague, favouriteFixtur
                                 //Fetching the leagues that that the team is involved via API
                                 const getMatches = await axios.get(mapAPIs[m].link + "competitions/" + leaguesForTeams[l] + "/matches",
                                 { headers: { "X-Auth-Token": mapAPIs[m].token, "access-control-allow-origin": "https://thefootballhub.netlify.app/*" } });
-                                console.log(getMatches)
                                 //If the status of the request is ok it stores the league name and all maches in matchesByLeague array
                                 if(getMatches.status ===  200){
                                     //Filters all the matches where the team plays as awayTeam and as homeTeam
